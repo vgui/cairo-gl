@@ -64,6 +64,8 @@
 
 #if CAIRO_HAS_GL_SURFACE || CAIRO_HAS_GLESV2_SURFACE || CAIRO_HAS_GLESV3_SURFACE
 
+#include <GL/glew.h>
+
 CAIRO_BEGIN_DECLS
 
 cairo_public cairo_surface_t *
@@ -111,6 +113,7 @@ cairo_gl_surface_create_for_window (cairo_device_t *device,
 #endif
 
 #if CAIRO_HAS_WGL_FUNCTIONS
+#include <GL/wglew.h>
 #include <windows.h>
 
 cairo_public cairo_device_t *

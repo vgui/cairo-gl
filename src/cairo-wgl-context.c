@@ -168,6 +168,7 @@ _wgl_dummy_ctx (cairo_wgl_context_t *ctx)
     format = ChoosePixelFormat (ctx->dummy_dc, &pfd);
     SetPixelFormat (ctx->dummy_dc, format, &pfd);
 
+    ctx->rc = wglCreateContextAttribsARB(ctx->dummy_dc,ctx->rc,NULL);
     wglMakeCurrent(ctx->dummy_dc, ctx->rc);
 
     return CAIRO_STATUS_SUCCESS;
